@@ -1,0 +1,89 @@
+body {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.main-header {
+    background-color: #ed7d31;
+}
+
+.main-header .navbar-nav .nav-item a.nav-link
+{
+    color: #ffffff;
+}
+
+.main-sidebar {
+    background-color: #ed7d31;
+}
+
+.main-sidebar .sidebar a.brand-link {
+    color:#ffffff;
+    border-bottom: 1px solid #ffffff;
+}
+
+.main-sidebar .sidebar nav ul.nav li.nav-item a.nav-link {
+    background: #fbe5d6;
+    color:#ffffff;
+    border-bottom: 1px solid #ffffff;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.sidebar::-webkit-scrollbar {
+    display: none;
+}
+
+.sidebar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+/*
+.main-sidebar{
+    background-color: #ffffff;
+}
+
+.brand-link {
+    background-color: #ed7d31;
+}
+
+
+.nav .nav-item  a
+{
+    color: #000000 ;
+}
+
+    .nav .nav-item :hover
+    {
+        background: #ed7d31 !important;
+        color: #000000 !important;
+    }
+
+    .nav-item.menu-is-opening.menu-open .nav-link
+    {
+        color: #000000 !important;
+    }
+
+    .nav-item.menu-is-opening.menu-open .menu-header
+    {
+        background: #ed7d31 !important;
+        color: #000000 !important;
+    }
+
+.nav-link.active{
+    background: #ed7d31 !important;
+    color: #000000 !important;
+}
+
+.nav-link.active2{
+    background: #fbe5d6 !important;
+    color: #000000 !important;
+}
+
+.nav.nav-treeview .nav-item :hover{
+    background: #fbe5d6 !important;
+    color: #000000 !important;
+}*/

@@ -16,7 +16,7 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header" style="background-color: #db681d; color:white;">
-                    <h5 class="text-nomal">ระบบ E-Service-ERS</h5>
+                    <h5 class="text-nomal">ระบบ E-Service</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
                     </button>
                 </div>

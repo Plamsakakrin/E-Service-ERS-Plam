@@ -9,7 +9,7 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header" style="background-color: #db681d; color:white;">
-                    <h5 class="text-nomal">ระบบ E-Service-ERS</h5>
+                    <h5 class="text-nomal">ระบบ E-Service</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
                     </button>
                 </div>
@@ -25,7 +25,7 @@
                     <br><br>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary"  data-bs-dismiss="modal"><i class="fa fa-times pr-2" aria-hidden="true"></i> ปิด</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="fa fa-times pr-2" aria-hidden="true"></i> ปิด</button>
                 </div>
             </div>
         </div>
@@ -77,6 +77,7 @@
                                 <div class="col-md-6"><br>
                                     <label for="under_unit" class="form-label">ซึ่งสังกัดอยู่ใน: </label>
                                     <textarea class="form-control" name="under_unit" autocomplete="off" placeholder="" style="height: 130px">{{ $type == 'edit' ? $under_unit : "" }} @if ($type == "add"){{old('under_unit')}} @endif</textarea>
+                                    <br>
                                 </div>
                                 <!-- <div class="row"> -->
                                 <div class="col-md-6">
@@ -702,8 +703,8 @@
                                     @error('fname')
                                     <span class="text-danger">{{$message}}</span>
                                     @enderror
-
-                                </div><br>
+                                    <br>
+                                </div>
                                 <div class="col-md-4">
                                     <label style="color:red">*</label>
                                     <label for="lname" class="form-label">นามสกุล: </label>
@@ -933,12 +934,12 @@
     });
 </script>
 @elseif (count($errors) > 0)
-    @foreach ($errors->all() as $error)
-    <script>
-       $(document).ready(function() {
+@foreach ($errors->all() as $error)
+<script>
+    $(document).ready(function() {
         $('#alert').modal('show');
     });
-    </script>
+</script>
 @endforeach
 @endif
 

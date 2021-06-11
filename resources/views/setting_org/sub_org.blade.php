@@ -35,7 +35,7 @@
                                 <div class="col-md-4">
                                     <label for="provinceid" class="form-label">จังหวัด: </label>
                                     <!-- <input type="text"  id="textfield3"  autocomplete="off" class="form-control" name="provinceid" value="{{$provinceid}}"> -->
-                                    <select name="office_provinceid" class="form-select province">
+                                    <select name="provinceid" class="form-select province">
                                         <option value="0" selected>== กรุณาเลือก ==</option>
                                         @foreach ($province as $row)
 
@@ -149,7 +149,7 @@
                 <div class="col-lg-1 p-0 text-center">
                     <a href="/settingorgform_page/editsub/edit?id={{$row->id}}"><i style="color: black;" class="fa fa-pencil-square-o" title="แก้ไขข้อมูล"></i></a>
                     <a href="{{url('/settingorgform_page/deletesub/'.$row->id)}}" data-bs-toggle="modal" data-bs-target="#alertdalete">
-                    <i style="color: red;" class="fa fa-times-circle" title="ยกเลิก"></i>
+                        <i style="color: red;" class="fa fa-times-circle" title="ยกเลิก"></i>
                     </a>
 
                 </div>
@@ -170,24 +170,23 @@
 <div class="modal fade" id="alertdalete" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
-        <div class="modal-header" style="background-color: #db681d; color:white;">
-                    <h5 class="text-nomal">ระบบ E-Service-ERS</h5>
+            <div class="modal-header" style="background-color: #db681d; color:white;">
+                <h5 class="text-nomal">ระบบ E-Service</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <form action="{{url('/settingorgform_page/deletesub/'.$row->id)}}" method="get">
                 @csrf
-            <input type=hidden id="id" name=id>
-            <div class="modal-body" style="text-align: center;">
-                <br><br>
-                ยืนยันการยกเลิกข้อมูล
-                <br><br>
-            </div>
-            <div class="modal-footer">          
-            <button  type="submit" class="btn btn-primary" data-bs-target="#alertdalete"
-            data-bs-toggle="modal" data-bs-dismiss="modal" style="background-color:#20a2aa;"><i class="fa fa-check" aria-hidden="true"></i> ยืนยัน</button>
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="fa fa-times pr-2" aria-hidden="true"></i> ปิด</button>
-            </div>
-        </form>
+                <input type=hidden id="id" name=id>
+                <div class="modal-body" style="text-align: center;">
+                    <br><br>
+                    ยืนยันการยกเลิกข้อมูล
+                    <br><br>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary" data-bs-target="#alertdalete" data-bs-toggle="modal" data-bs-dismiss="modal" style="background-color:#20a2aa;"><i class="fa fa-check" aria-hidden="true"></i> ยืนยัน</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="fa fa-times pr-2" aria-hidden="true"></i> ปิด</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
@@ -211,30 +210,30 @@
 
 <!-- Modal -->
 <div class="modal fade" id="alert" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header" style="background-color: #db681d; color:white;">
-                    <h5 class="text-nomal">ระบบ E-Service-ERS</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                    </button>
-                </div>
-                <div class="modal-body" style="text-align: center;">
-                    <br><br>
-                    @if(session("success"))
-                    {{ Session::get('success') }}
-                    @elseif(count($errors) > 0)
-                    @foreach ($errors->all() as $error)
-                    {{ $error }}
-                    @endforeach
-                    @endif
-                    <br><br>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary"  data-bs-dismiss="modal"><i class="fa fa-times pr-2" aria-hidden="true"></i> ปิด</button>
-                </div>
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color: #db681d; color:white;">
+                <h5 class="text-nomal">ระบบ E-Service</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                </button>
+            </div>
+            <div class="modal-body" style="text-align: center;">
+                <br><br>
+                @if(session("success"))
+                {{ Session::get('success') }}
+                @elseif(count($errors) > 0)
+                @foreach ($errors->all() as $error)
+                {{ $error }}
+                @endforeach
+                @endif
+                <br><br>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="fa fa-times pr-2" aria-hidden="true"></i> ปิด</button>
             </div>
         </div>
     </div>
+</div>
 
 
 
